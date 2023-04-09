@@ -36,16 +36,12 @@ public class BasePage {
         lista.get(index).click();
     }
 
-    public void elementNotVisible(By locator) {
-        wait_for().until(ExpectedConditions.invisibilityOfElementLocated(locator));
-    }
-
-    public void waitElementVisible(By locator) {
-        wait_for().until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
-    }
-
     public String getText(By locator) {
         return find(locator).getText();
+    }
+
+    public void switchToFrame(By locator) {
+        driver.switchTo().frame(find(locator));
     }
 
     public String getTextByAttribute(By locator, String attribute) {

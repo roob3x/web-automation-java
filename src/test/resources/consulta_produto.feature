@@ -1,7 +1,7 @@
 #language: pt
 Funcionalidade: Consultar produto
 
-    @smoke
+    @consulta_produto @smoke
     Esquema do Cenario: Valido preco normal e preco de assinante para o produto
         Dado realizo a consulta do produto "racao"
         Quando seleciono o terceiro produto da lista
