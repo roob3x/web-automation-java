@@ -1,11 +1,14 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
 import java.util.Set;
 
 public class BasePage {
@@ -28,12 +31,35 @@ public class BasePage {
         return element;
     }
 
+    public void click_element_by_index(WebElement el, int index) {
+        List<WebElement> lista = el.findElements(By.tagName("a"));
+        lista.get(index).click();
+    }
+
     public void elementNotVisible(By locator) {
         wait_for().until(ExpectedConditions.invisibilityOfElementLocated(locator));
     }
 
+    public void waitElementVisible(By locator) {
+        wait_for().until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
+    }
+
     public String getText(By locator) {
         return find(locator).getText();
+    }
+
+    public String getTextByAttribute(By locator, String attribute) {
+        return find(locator).getAttribute(attribute);
+    }
+
+    public void moveToElement(By locator) {
+        Actions actions = new Actions(driver);
+        actions.moveToElement(find(locator)).perform();
+    }
+
+    public void moveToElementUsingJavascript(By locator) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView();", find(locator));
     }
 
     public void click(By locator) {

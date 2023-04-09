@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.SessionId;
 
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 import static constants.Path.CHROME_DRIVER_PATH;
 
@@ -20,6 +21,7 @@ public class Driver {
             options.addArguments("--remote-allow-origins=*");
             driver = new ChromeDriver(options);
             driver.manage().window().maximize();
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         }
         return driver;
     }
