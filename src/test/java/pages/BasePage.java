@@ -10,8 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 import java.util.Set;
+import java.util.logging.Logger;
 
 public class BasePage {
+    private static final Logger logger = Logger.getLogger(BasePage.class.getName());
     protected WebDriver driver;
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -37,6 +39,7 @@ public class BasePage {
     }
 
     public String getText(By locator) {
+        logger.info("-- obtendo o texto do elemento " + locator);
         return find(locator).getText();
     }
 
@@ -45,6 +48,7 @@ public class BasePage {
     }
 
     public String getTextByAttribute(By locator, String attribute) {
+        logger.info("-- obtendo o texto do elemento " + locator + " atraves do atributo " + attribute);
         return find(locator).getAttribute(attribute);
     }
 
@@ -60,11 +64,13 @@ public class BasePage {
 
     public void click(By locator) {
         wait_for().until(ExpectedConditions.elementToBeClickable(locator)).click();
+        logger.info("-- clicando no elemento " + locator);
     }
 
 
     public void send_keys(By locator, String text) {
         wait_for().until(ExpectedConditions.elementToBeClickable(locator)).sendKeys(text);
+        logger.info("-- escrevendo no elemento " + locator);
     }
 
     public void handleWindow() {
