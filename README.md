@@ -55,6 +55,9 @@ Este projeto de e-commerce tem como objetivo validar as paginas, com fluxos de s
     * Para utilizar os metodos da pagina nos steps, instancie a pagina deseja. por ex: HomePage homePage new HomePage(), e assim podera usar a funcao por ex: mainpage.preencherUsuario() no step desejado;
     * Caso seus testes tenham mais de uma URL, centralize no arquivo src/test/java/constants/Url
     * Para manipular diferentes versoes de drivers ou navegadores, adicionar em src/test/java/common/drivers
+    * Para criacao de metodos para algum tratamento, centralize o metodo em utils/Filters
     * O arquivo ServiceHooks tem o intuito de executar acoes antes e depois dos cenarios. Tenha cautela caso necessite inserir algo para nao impactar outros cenarios.
+    * A cada step executado, sera disparado o metodo takeScreenshot antes e depois do mesmo. e sera armazenada as evidencias em source/relatorios com a data de execucao
+      * Obs: As evidencias serao apagadas sempre que executar a suite de teste, para evitar o acumulo de evidencias antigas. 
 * Obs: Caso enxergue melhorias possiveis na estrutura do projeto, conversar com a lideranca para entender a melhor forma para ajustar.
 * Thats all folks! enjoy :)
