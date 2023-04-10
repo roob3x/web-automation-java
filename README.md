@@ -38,7 +38,12 @@ Este projeto de e-commerce tem como objetivo validar as paginas, com fluxos de s
 * execute no terminal na raiz do projeto:
     * mvn test -Dcucumber.options="--tags @smoke"
 * Ou voce pode executar direto no arquivo TestRunner
-* Obs 1: a tag smoke é comum em todos os cenarios. para executar cenario especifico altere para a tag desejada.
+* Obs 1: O projeto esta apontando para o ambiente da nuvem com browserstack, caso queira rodar a automacao local, basta alterar ENVIRONMENT no arquivo config para local.
+  * PONTO DE ATENCAO: Ao alterar ENVIRONMENT para local, nao esqueca de voltar para env de browsertack caso precise atualizar algo no projeto.
+  * Para que nao precise alterar o ENVIROMENT voce pode executar o projeto via linha de comando no terminal:
+    * mvn clean test -Denv=browserstack
+    * mvn clean test -Denv=local
+* Obs 2: a tag smoke é comum em todos os cenarios. para executar cenario especifico altere para a tag desejada.
     * No caso de execucao no arquivo TestRunner altear o parametro da tags.
 
 
