@@ -8,16 +8,24 @@ import utils.Screenshot;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 
+import static constants.Config.ENVIRONMENT;
 import static constants.Url.MAIN_URL;
 
 public class ServiceHooks {
     Filters filter = new Filters();
 
     @Before
-    public void beforeScenario(Scenario scenario) throws InterruptedException, NoSuchFieldException, IllegalAccessException {
+    public void beforeScenario(Scenario scenario) throws InterruptedException, NoSuchFieldException, IllegalAccessException, MalformedURLException {
         filter.removeDirectoryEvidence();
-        Driver.getDriver().get(MAIN_URL);
+        if (ENVIRONMENT.equals("browserstack")) {
+            Driver.createBrowserStack().get(MAIN_URL);
+        }
+        else {
+            Driver.getDriver().get(MAIN_URL);
+        }
+
     }
 
     @BeforeStep
