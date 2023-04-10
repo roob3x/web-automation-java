@@ -3,6 +3,7 @@ package steps;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.pt.Entao;
 import pages.CheckoutPage;
+import utils.Screenshot;
 
 import java.util.List;
 import java.util.Map;

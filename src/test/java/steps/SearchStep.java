@@ -4,6 +4,7 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.it.Quando;
 import io.cucumber.java.pt.Entao;
 import pages.SearchPage;
+import utils.Screenshot;
 
 import java.util.List;
 import java.util.Map;

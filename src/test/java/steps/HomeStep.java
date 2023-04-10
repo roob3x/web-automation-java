@@ -2,6 +2,7 @@ package steps;
 
 import io.cucumber.java.es.Dado;
 import pages.HomePage;
+import utils.Screenshot;
 
 import static support.Driver.driver;
 
