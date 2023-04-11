@@ -22,6 +22,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 public class Screenshot extends Utils {
     static Log Logger = (Log) LogFactory.getLog(Screenshot.class);
     private static String path;
