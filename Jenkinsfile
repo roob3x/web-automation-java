@@ -10,7 +10,7 @@ pipeline {
                 submoduleCfg: [],
                 userRemoteConfigs: [[
                     url: 'https://github.com/roob3x/web-automation-java.git',
-                    credentialsId: 'roberto.siilva'
+                    credentialsId: 'web-automation-java-pipeline'
                 ]]
             ])
         }
