@@ -4,6 +4,7 @@ pipeline {
     stage('Checkout') {
       steps {
         checkout([$class: 'GitSCM',
+          branches: [[name: '*/main']],
           userRemoteConfigs: [[
             url: 'https://github.com/roob3x/web-automation-java.git',
             credentialsId: 'web-automation-java-pipeline'
