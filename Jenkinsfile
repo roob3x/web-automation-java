@@ -2,14 +2,18 @@ pipeline {
   agent any
   stages {
     stage('Checkout') {
-      steps {
-        checkout([$class: 'GitSCM',
-          userRemoteConfigs: [[
-            url: 'https://github.com/roob3x/web-automation-java.git',
-            credentialsId: 'web-automation-java-pipeline'
-          ]]
-        ])
-      }
+        steps {
+            checkout([$class: 'GitSCM',
+                branches: [[name: 'main']],
+                doGenerateSubmoduleConfigurations: false,
+                extensions: [],
+                submoduleCfg: [],
+                userRemoteConfigs: [[
+                    url: 'https://github.com/roob3x/web-automation-java.git',
+                    credentialsId: 'web-automation-java'
+                ]]
+            ])
+        }
     }
     stage('Download dependencies') {
       steps {
