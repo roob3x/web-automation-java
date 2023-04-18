@@ -13,7 +13,13 @@ public class HomePage extends BasePage{
     public static By ACCEPT_COOKIES = By.id("onetrust-accept-btn-handler");
 
     public void searchForProduct(String text) {
-        click(ACCEPT_COOKIES);
+        try {
+            click(ACCEPT_COOKIES);
+        }
+        catch (Exception e) {
+            logger.info("-- aceitacao de cookies nao apareceu na home page ");
+        }
+
         send_keys(INPUT_SEARCH, text);
         click(BUTTON_SEARCH);
     }

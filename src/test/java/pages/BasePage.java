@@ -13,7 +13,7 @@ import java.util.Set;
 import java.util.logging.Logger;
 
 public class BasePage {
-    private static final Logger logger = Logger.getLogger(BasePage.class.getName());
+    static final Logger logger = Logger.getLogger(BasePage.class.getName());
     protected WebDriver driver;
     public BasePage(WebDriver driver) {
         this.driver = driver;

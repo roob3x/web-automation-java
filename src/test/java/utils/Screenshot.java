@@ -1,6 +1,5 @@
 package utils;
 
-import com.sun.javafx.util.Utils;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeStep;
@@ -23,7 +22,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-public class Screenshot extends Utils {
+public class Screenshot {
     static Log Logger = (Log) LogFactory.getLog(Screenshot.class);
     private static String path;
     private static SimpleDateFormat timestampEvidencia;

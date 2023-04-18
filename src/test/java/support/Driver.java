@@ -28,7 +28,7 @@ public class Driver {
             options.addArguments("--remote-allow-origins=*");
             driver = new ChromeDriver(options);
             driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         }
         return driver;
     }
@@ -45,7 +45,7 @@ public class Driver {
             driver = new RemoteWebDriver(new URL("https://" + USERNAME + ":" + ACCESS_KEY +
                     URL_BROWSERSTACK), caps);
             driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         }
         return driver;
     }

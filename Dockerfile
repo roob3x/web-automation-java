@@ -1,6 +1,13 @@
-FROM openjdk:8
+FROM openjdk:8-jdk-slim
+
+# Instalação do Maven
+RUN apt-get update && apt-get install -y maven
+
 WORKDIR /app
-COPY pom.xml /app/pom.xml
-COPY src /app/src
+
+COPY pom.xml .
+COPY src ./src
+
 RUN mvn clean install
+
 CMD ["mvn", "test"]
